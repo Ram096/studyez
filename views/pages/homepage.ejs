@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/header') %>
+
+<body>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script type="text/javascript" src="https://cdn.addevent.com/libs/atc/1.6.1/atc.min.js" async defer></script>
+    <div class="container-fluid">
+        <div class="row top top-buffer">
+            <div class="col-12">
+                <p align="center"><iframe src="https://calendar.google.com/calendar/embed?src=<%=locals.user.email%>&ctz=America%2FDenver" style="border: 0" width="1200" height="600" frameborder="0" scrolling="no"></iframe></p>
+            </div>
+        </div>
+        <table class="table table-bordered" id="document_table">
+			<tr>
+				<th class="align-bottom" rowspan="1">Document Title</th>
+				<th class="align-bottom"rowspan="1">Knowledge Level</th>
+                <th class="align-bottom"rowspan="1">Study Event</th>
+			</tr>
+
+            <% if(document_info && knowledge_info){ %>
+                <% for (var i = 0; i < document_info.length; i++) {%>
+                <tr>
+                    <td><%= document_info[i]%></td>
+                    <td><%= knowledge_info[i]%></td>
+                    <td>
+                        <div title="Add to Calendar" class="addeventatc">
+                            Add to Calendar
+                            <span class="start" id = <%-i%>>01/01/2022</span>
+                            <span class="end" id = "end_date">01/01/2022</span>
+                            <span class="title"> <%= document_info[i]%></span>
+                            <span class="description">You should study for <%= 6 - knowledge_info[i]%> hour(s).</span>
+
+                        </div>
+                    <script type="text/javascript">
+                        window.addeventasync = function(){
+                            addeventatc.settings({
+                                appleical  : {show:false, text:"Apple Calendar"},
+                                google     : {show:true, text:"Google <em>(online)</em>"},
+                                office365  : {show:false, text:"Office 365 <em>(online)</em>"},
+                                outlook    : {show:false, text:"Outlook"},
+                                outlookcom : {show:false, text:"Outlook.com <em>(online)</em>"},
+                                yahoo      : {show:false, text:"Yahoo <em>(online)</em>"}
+                            });
+                        };
+                        </script>
+                        <script>
+                            var parsed_data = '<%- JSON.stringify(knowledge_info[i]) %>';
+                            var index = '<%- JSON.stringify(i) %>'
+                            var data = new Date();
+                            data.setDate(data.getDate() + parseInt(parsed_data));
+                            var day = data.getDate();
+                            var month = data.getMonth() + 1;
+                            var year = data.getFullYear();
+                            var start_string = month + '/' + day + '/' + year +'10:00 AM'
+                            var end_string = month + '/' + day + '/' + year
+                            document.getElementById(index).innerHTML=start_string;
+                            document.getElementById("end_date").innerHTML=start_string;
+                        </script>
+                    </td>
+                </tr>
+            <%}%>
+            <%}%>
+
+
+			
+		</table>
+    </div>
+  </body>
+<%- include('../partials/footer') %>
+</html>
+
+
+
+<!-- 
+Ramy Kassam
+-->

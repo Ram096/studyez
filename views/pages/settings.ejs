@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('../partials/header') %>
+<body>
+    <% if (locals.user) { %>
+    <div class = "container">
+        <div class = "row">
+            <div class = "containColumn">
+            <!-- Account Menu -->
+            
+                <div class="cardSettings">
+                    <div class="cover" style="background-image: url(../../resources/img/defaultImage.jpg);"><a class="options" href="#" data-toggle="tooltip" title="" data-original-title="You currently have 290 Reward points to spend"><i class="fa fa-award text-md"></i></a></div>
+                    <div class="card-profile">
+                        <div class="user-image">
+                            <input type = "file" id = "file" style = "width: 100%">
+                            <img src="<%= locals.user.picture %>" alt="User Photo" id = "userimg"> 
+                        </div>
+                        <div class="details-user">
+                            <h5 class="user-name"></h5><span class="userPosition"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class = "displayInfo">
+                    <nav class = "firstInfo">
+                        <a class = "listInfo" href = "#">
+                            <div class = "justify-content">
+                                <div><i class = "textMuted"></i>
+                                    <div class = "inlineBlock">Account</div>
+
+                                </div>
+                            </div>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+            <!-- Profile Settings -->
+            <div class="col-lg-8 pb-5">
+                <form class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="account-fn" style = "font-weight: bold;">Nickname</label>
+                            <h1 style = "font-size: 16px"><%= locals.user.nickname %></h1>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="account-ln" style = "font-weight: bold;">E-mail Address</label>
+                            <h1 style = "font-size: 16px"><%= locals.user.email %></h1>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="account-fn" style = "font-weight: bold;">First Name</label>
+                            <h1 style = "font-size: 16px"><%= locals.user.given_name.charAt(0).toUpperCase() + locals.user.given_name.slice(1)%></h1>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="account-ln" style = "font-weight: bold">Last Name</label>
+                            <h1 style = "font-size: 16px"><%= locals.user.family_name.charAt(0).toUpperCase() + locals.user.family_name.slice(1) %></h1>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <hr class="mt-2 mb-3">
+                        <div class="d-flex flex-wrap justify-content-between align-items-center">
+                            <div class="custom-control custom-checkbox d-block">
+                                <input class="custom-control-input" type="checkbox" id="subscribe_me" checked="">
+                                <label class="custom-control-label" for="subscribe_me">Subscribe me to Newsletter</label>
+                            </div>
+                    
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<% } %>
+<script src = "../../resources/js/my_scripts.js"></script>
+<%- include('../partials/footer') %>
+</html>
+
+<!-- 
+    Ramy Kassam
+-->

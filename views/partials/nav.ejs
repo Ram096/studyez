@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a href="/cover_page">
+      <img
+        src="../resources/img/Study_EZ_small_logo.jpeg"
+        alt=""
+        width="30"
+        height="30"
+      />
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/homepage">My Calendar</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/upload">Upload</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/knowledge">Knowledge Surveys</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="/help_about">Help & FAQ</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/account_recovery">Account Recovery</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/settings">Profile</a>
+        </li>
+      </ul>
+    </div>
+      <div class="form-inline my-2 my-lg-0">
+        <% if (locals.user) { %>
+          <a  href="/logout" 
+              class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Logout</a>
+      <% } else { %>
+          <a  href="/login" 
+              class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Login</a>
+      <% } %>
+      </div>
+    </div>
+</nav>
+
+
+
+<!-- 
+Ramy Kassam 
+-->

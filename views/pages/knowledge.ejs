@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/header') %>
+
+  <body>
+    <div class="container">
+    <h3>Welcome to the knowledge surverys page!</h3>
+    <p>Here, you will upload your document and let us know how comfortable you are with the topic so that we can set up a study plan that works best for you! </p>
+    
+    <form action="/knowledge" method="POST">
+      <label for="document_list">Choose a document:</label>
+      <select name="document_list" id="document_list">
+        <% if(document_info){ %>
+          <% for (var i = 0; i < document_info.length; i++) {%>
+            <option> <%= document_info[i] %></option>
+            <%}%>
+        <%}%>
+      </select>
+      <br><br>
+    <h5>How well do you know this information?</h5>
+    <select name="input_knowledge" id="input_knowledge">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    <input type="submit">
+  </form>
+  <div>
+    <table>
+      <tr>
+        <th  style="border-bottom:2px solid black">Knowledge Levels</th>
+      </tr>
+      <tr>
+        <td>1 (I know nothing)</td>
+      </tr>
+      <tr>
+        <td>2 (I do not know it well)</td>
+      </tr>
+      <tr>
+        <td>3 (I know it alright)</td>
+      </tr>
+      <tr>
+        <td>4 (I know it pretty well)</td>
+      </tr>
+      <tr>
+        <td>5 (I've got this down</td>
+      </tr>
+    </table>
+  </div>
+  </body>
+
+  <%- include('../partials/footer') %>
+</html>
+
+
+<!-- 
+Ramy Kassam
+-->

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/header') %>
+
+  <body>
+    <div class="container">
+        <div class="banner" style="padding:15px; text-align:center;color:#0d67b5;">
+            <div class="banner-content">
+                <h1>Welcome to Study EZ! </h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="banner" style="padding:15px; text-align:center;">
+            <div class="banner-content">
+                <h4>Study EZ is a platform unlike any other. Our website combines one of the most effective Study
+                    techniques, spaced repetition, with a comprehensive calendar and document upload system. Spaced 
+                    repetion relies on you forgetting the material you've learned so you can re-learn it and 
+                    cement your knowledge. (See our <a href="/help_about">about</a> page for more information on 
+                    spaced repetition.)
+                    <br></br>
+
+                    Unlike traditional planners, Study EZ sends you reminders about what you need to study and when. 
+                    After uploading your documents and filling out some Knowledge Surveys, we create customized
+                    reccomendations for study events. We use personalized Knowledge Surveys to guage how well you 
+                    know the material, and then suggest study events based on these results. 
+                    These events get added to your calendar and we will even send reminders for 
+                    upcoming events! The more you use Study EZ the more personalized your plan becomes. To get started click
+                    on the button below. You must sign in with a Google Account!
+                </h4>
+            </div>
+        </div>
+        <div class="container" style="text-align: center;">
+            <% if (!locals.user) { %>
+                <a  href="/login" 
+                    class="block mt-4 lg:inline-block lg:mt-0 text-gray-300 hover:text-white mr-4">Register</a>
+            <% }%>
+
+        </div>
+    </div>
+  </body>
+
+  <%- include('../partials/footer') %>
+</html>
+
+
+<!-- 
+Ramy Kassam
+-->

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/header') %>
+
+  <body>
+    <div class="container">
+
+      <h3>Upload your file here:</h3>
+      <ul>
+        This is where you can upload your file which could contain your notes, homeworks, or any other resources that
+        you would like to use to study.
+      </ul>
+      <div class="upload-file" id="upload-file">
+        <%= message %>
+          <!-- enctype="multipart/form-data" -->
+          <form id="fileForm" enctype="multipart/form-data" method="POST" class="form" action="">
+            <input name="files" id="files" class="select-file-button" type="file" accept="/*" multiple />
+            <div class="upload-button">
+              <!-- <button id="submitFileBtn" onclick="submitFiles();" class="btn btn-primary fluid" type="">Upload
+                files</button> -->
+              <input onclick="submitFiles();" type="submit" value="submit">
+            </div>
+          </form>
+          <!-- <img class="file-upload-image" src="../../resources/img/uploadpicture.png" alt=" uploadpicture" /> -->
+          <p id="upload-message"></p>
+      </div>
+    </div>
+  </body>
+  <%- include('../partials/footer') %>
+
+</html>
+
+
+<!-- 
+Ramy Kassam 
+-->
