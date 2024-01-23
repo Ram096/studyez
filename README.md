@@ -1,4 +1,4 @@
-StudyEZ
+## StudyEZ
 
 StudyEz is an online study tool that will allow students to study in the most effective way possible via spaced repetition. <spaced repetition explanation here maybe> The website will feature a login page with customizable profile pictures, document upload, event creation and modification, and knowledge surveys to recognize how comfortable a student feels with the material. 
   
